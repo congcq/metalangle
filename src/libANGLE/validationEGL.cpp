@@ -3284,9 +3284,9 @@ Error ValidateBindAPI(const EGLenum api)
 {
     switch (api)
     {
-        case EGL_OPENGL_API:
         case EGL_OPENVG_API:
             return EglBadParameter();  // Not supported by this implementation
+        case EGL_OPENGL_API:
         case EGL_OPENGL_ES_API:
             break;
         default:
