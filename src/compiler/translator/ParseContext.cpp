@@ -748,7 +748,7 @@ bool TParseContext::checkConstructorArguments(const TSourceLoc &line,
     {
         // The size of an unsized constructor should already have been determined.
         ASSERT(!type.isUnsizedArray());
-        if (static_cast<size_t>(type.getOutermostArraySize()) != arguments.size() && !IsDesktopGLSpec(mShaderSpec))
+        if (static_cast<size_t>(type.getOutermostArraySize()) != arguments.size())
         {
             error(line, "array constructor needs one argument per array element", "constructor");
             return false;
@@ -3527,7 +3527,7 @@ TFunctionLookup *TParseContext::addNonConstructorFunc(const ImmutableString &nam
 
 TFunctionLookup *TParseContext::addConstructorFunc(const TPublicType &publicType)
 {
-    if (mShaderVersion < 300 && publicType.isArray())
+    if (mShaderVersion < 300 && publicType.isArray() && !IsDesktopGLSpec(mShaderSpec))
     {
         error(publicType.getLine(), "array constructor supported in GLSL ES 3.00 and above only",
               "[]");
