@@ -325,38 +325,55 @@ GLint LinkProgram(GLuint program)
 
 - (id)init
 {
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     if (self = [super init])
     {
+NSLog(@"at %s:%d", __FILE__, __LINE__);
         [self constructor];
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     }
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)coder
 {
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     if (self = [super initWithCoder:coder])
     {
+NSLog(@"at %s:%d", __FILE__, __LINE__);
         [self constructor];
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     }
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     return self;
 }
 
 - (void)constructor
 {
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     _drawableColorFormat   = MGLDrawableColorFormatRGBA8888;
     _drawableDepthFormat   = MGLDrawableDepthFormatNone;
     _drawableStencilFormat = MGLDrawableStencilFormatNone;
     _drawableMultisample   = MGLDrawableMultisampleNone;
 
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     _display = [MGLDisplay defaultDisplay];
 
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     _eglSurface = EGL_NO_SURFACE;
+
+NSLog(@"at %s:%d", __FILE__, __LINE__);
 
     if (rx::IsMetalDisplayAvailable())
     {
+NSLog(@"at %s:%d", __FILE__, __LINE__);
         _metalLayer       = [[CAMetalLayer alloc] init];
+NSLog(@"at %s:%d", __FILE__, __LINE__);
         _metalLayer.frame = self.bounds;
+NSLog(@"at %s:%d", __FILE__, __LINE__);
         [self addSublayer:_metalLayer];
+NSLog(@"at %s:%d", __FILE__, __LINE__);
     }
     else
     {
