@@ -2,7 +2,7 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ master, ci-temp, ci-temp2, gles3, gles3-dev ]
+    branches: [ master, ci-temp, ci-temp2, gles3, gles3-dev, debugstuff ]
     tags:
       - '*'
   pull_request:
