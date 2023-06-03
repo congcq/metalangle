@@ -5605,7 +5605,7 @@ TIntermBranch *TParseContext::addBranch(TOperator op,
         {
             error(loc, "void function cannot return a value", "return");
         }
-        else if (*mCurrentFunctionType != expression->getType())
+        else if (*mCurrentFunctionType != expression->getType() && !IsDesktopGLSpec(mShaderSpec))
         {
             error(loc, "function return is not matching type:", "return");
         }
