@@ -28,7 +28,7 @@ jobs:
         name: 'MetalANGLE.framework.ios'
         path: MetalANGLE.framework.ios.zip
     - name: upload
-      uses: softprops/action-gh-release@v4
+      uses: softprops/action-gh-release@v3
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
